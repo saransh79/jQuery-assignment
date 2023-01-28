@@ -16,9 +16,8 @@ function compare(a, b) {
     return 0
 }
 
-function displayData(para) {
+function displayData() {
     $('table tbody tr').remove()
-    if (para) data = para
     for (user of data) {
         $("table tbody").append(
             '<tr>' +
@@ -68,7 +67,7 @@ $("table").on('click', '.del', function () {
     data.splice(index, 1)
 
     alert("This user will be removed!")
-    displayData(data)
+    displayData()
 })
 
 //  Sorting data with names
