@@ -34,13 +34,13 @@ function displayData(para) {
 // Inserting data
 var data = []
 var serialNumber = 1
+
 function submitData(e) {
     e.preventDefault()
     var firstname = $('#firstname').val()
     var lastname = $('#lastname').val()
     var contactNumber = $('#contactnumber').val()
-    const name = firstname + " " + lastname
-
+    var name = firstname + " " + lastname
     // Inserting data
     if (!ifPresent(name, contactNumber)) {
         $("table tbody").append(
@@ -64,9 +64,9 @@ $('form').submit((e) => submitData(e))
 // Removing the selected row
 $("table").on('click', '.del', function () {
     var ser = $(this).closest("tr").find("td:eq(0)").text()
-    const index= data.findIndex(item=>item.sn===ser)
-    data.splice(index,1)
-    
+    const index = data.findIndex(item => item.sn === ser)
+    data.splice(index, 1)
+
     alert("This user will be removed!")
     displayData(data)
 })
@@ -80,8 +80,21 @@ $('#name').click(function () {
 // Searching data with name
 $("#searchButton").click(function () {
     const searchName = $("#searchInput").val()
-    var found = data.filter(e => e.name === searchName)
-    if (found.length)
-        displayData(found)
+    var found = data.find(e => e.name === searchName)
+    console.log(found);
+    if (found) {
+        $('table tbody tr').remove()
+        $("table tbody").append(
+            '<tr>' +
+            '<td>' + found.sn + '</td>' +
+            '<td>' + found.name + '</td>' +
+            '<td>' + found.contact + '</td>' +
+            '<td><span class="del">x</span></td>' +
+            '</tr>'
+        )
+        $("table").click(function () {
+            displayData()
+        })
+    }
     else alert('User not found!')
 })
