@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+input {
+  padding: 5px;
+  margin: 8px 0 20px 0;
+  border: 2px solid;
+}
+p {
+  font-size: 20px;
+  font-weight: 550;
+  opacity: 0.8;
+}
+#section1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+.form {
+  width: 360px;
+}
+#button {
+  width: 100%;
+  padding: 10px;
+  background-color: lightgreen;
+}
+
+#section2 {
+  margin: 0 10%;
+}
+.searchBar {
+  width: 80%;
+  border: 2px solid;
+  border-radius: 15px;
+  padding: 7px;
+  display: flex;
+  justify-content: space-between;
+}
+#section2 input {
+  width: 75%;
+  border: none;
+  margin: 0px;
+  outline: none;
+}
+#searchButton{
+    padding-right: 10px;
+    background: transparent;
+    border: none;
+}
+
+td, th {
+    border: 2px solid #777;
+    padding: 0.5rem;
+    word-wrap: break-word;
+    text-align: center;
+}
+ 
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+ thead tr th{
+    width: 10%;
+    height: 70px;
+    background-color: lightgray;
+ }
+tbody tr td{
+    background: rgb(249, 245, 245);
+    width: 10%;
+    height: 70px;
+}
+caption {
+    font-size: 0.8rem;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="section1">
+        <form class="form">
+            <p>Person's Name</p>
+            <input id="firstname" type="text" placeholder="First" required>
+            <input id="lastname" type="text" placeholder="Last" required>
+
+            <p>Contact Number</p>
+            <input id="contactnumber" type="text" required>
+            <div><button id="button" type="submit">Save</button></div>
+
+        </form>
+    </section>
+
+    <section id="section2">
+        <div class="searchBar">
+            <input type="text" id="searchInput">
+            <button type="submit" id="searchButton">Search</button>
+        </div>
+        <div id="dataTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th id="SN">SN.</th>
+                        <th id="name">Name</th>
+                        <th>Contact</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
