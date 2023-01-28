@@ -18,7 +18,9 @@ function compare(a, b) {
 
 function displayData() {
     $('table tbody tr').remove()
+    var serialNum = 1;
     for (user of data) {
+        user.sn = serialNum++
         $("table tbody").append(
             '<tr>' +
             '<td>' + user.sn + '</td>' +
@@ -32,29 +34,18 @@ function displayData() {
 
 // Inserting data
 var data = []
-var serialNumber = 1
-
 function submitData(e) {
     e.preventDefault()
     var firstname = $('#firstname').val()
     var lastname = $('#lastname').val()
     var contactNumber = $('#contactnumber').val()
-    var name = firstname + " " + lastname
-    // Inserting data
+
     if (!ifPresent(name, contactNumber)) {
-        $("table tbody").append(
-            '<tr>' +
-            '<td >' + serialNumber + '</td>' +
-            '<td>' + name + '</td>' +
-            '<td>' + contactNumber + '</td>' +
-            '<td><span class="del">x</span></td>' +
-            '</tr>'
-        )
         data.push({
-            name: name,
+            name: firstname + " " + lastname,
             contact: contactNumber,
-            sn: serialNumber++
         })
+        displayData();
     }
 }
 
@@ -65,7 +56,6 @@ $("table").on('click', '.del', function () {
     var ser = $(this).closest("tr").find("td:eq(0)").text()
     const index = data.findIndex(item => item.sn === ser)
     data.splice(index, 1)
-
     alert("This user will be removed!")
     displayData()
 })
@@ -80,7 +70,7 @@ $('#name').click(function () {
 $("#searchButton").click(function () {
     const searchName = $("#searchInput").val()
     var found = data.find(e => e.name === searchName)
-    console.log(found);
+
     if (found) {
         $('table tbody tr').remove()
         $("table tbody").append(
